@@ -1,73 +1,96 @@
-# Welcome to your Lovable project
+# Association Meal Distribution Website
 
-## Project info
+## Project Overview
 
-**URL**: https://lovable.dev/projects/13847611-e583-4cc9-ba9f-b6fea8022d2a
+This web application provides a responsive, user-friendly platform for a charitable association that distributes meals to people in need. It enables:
 
-## How can I edit this code?
+* **Meal distribution calendar**: View dates, times, and locations of upcoming distributions.
+* **Volunteer sign-up**: Easy form for people who want to volunteer.
+* **Donation flow**: Direct links or embedded widget to accept donations.
+* **Contact**: Simple contact form and association details.
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+* **Frontend**: React + TypeScript + Tailwind CSS + shadcn-ui
+* **Backend**: Node.js + Express
+* **Database**: MongoDB
+* **Authentication**: JSON Web Tokens (JWT) for admin routes
+* **Hosting**:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/13847611-e583-4cc9-ba9f-b6fea8022d2a) and start prompting.
+  * Frontend: Vercel
+  * Backend: Render or Railway
 
-Changes made via Lovable will be committed automatically to this repo.
+## Features
 
-**Use your preferred IDE**
+1. **Public Pages**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+   * `/` – Homepage with CTA buttons and latest announcements.
+   * `/calendar` – Calendar or list view of distribution events.
+   * `/volunteer` – Volunteer information and sign-up form.
+   * `/donate` – Donation instructions or embedded widget.
+   * `/contact` – Contact form and association details.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+2. **Admin Panel** (secured)
 
-Follow these steps:
+   * Manage events (create, read, update, delete).
+   * Edit homepage content and announcements.
+   * View volunteer sign-ups.
+   * Basic authentication with email/password.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Installation & Setup
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+1. Clone this repository:
 
-# Step 3: Install the necessary dependencies.
-npm i
+   ```bash
+   git clone <YOUR_GIT_URL>
+   cd <YOUR_PROJECT_FOLDER>
+   ```
+2. Install dependencies:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+   ```bash
+   npm install
+   ```
+3. Create `.env` file at project root:
+
+   ```env
+   MONGO_URI=<your-mongo-connection-string>
+   JWT_SECRET=<strong-secret>
+   ```
+4. Run development servers:
+
+   ```bash
+   # Backend
+   npm run dev:server
+
+   # Frontend
+   npm run dev:client
+   ```
+
+## Deployment
+
+* **Frontend**: Push to main branch – Vercel deploys automatically.
+* **Backend**: Push to main – Render/Railway picks up changes and redeploys.
+
+## Project Structure
+
+```
+/ (root)
+├─ client/        # React app
+│  ├─ src/
+│  ├─ public/
+│  └─ package.json
+├─ server/        # Express API
+│  ├─ src/
+│  └─ package.json
+└─ README.md      # This file
 ```
 
-**Edit a file directly in GitHub**
+## Contribution
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. Fork the repo and create a feature branch.
+2. Commit your changes with clear messages.
+3. Open a pull request for review.
 
-**Use GitHub Codespaces**
+## License
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/13847611-e583-4cc9-ba9f-b6fea8022d2a) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is licensed under the MIT License.
